@@ -109,21 +109,21 @@ export default function ImageUploader() {
           onDrop={onDrop}
           onDragOver={onDragOver}
           onDragLeave={onDragLeave}
-          className={`w-full min-h-[320px] border-[1.5px] border-dashed rounded-xl flex flex-col items-center justify-center gap-4 cursor-pointer transition-all relative overflow-hidden
+          className={`w-full min-h-80 border-[1.5px] border-dashed rounded-xl flex flex-col items-center justify-center gap-4 cursor-pointer transition-all relative overflow-hidden
             ${
               state === 'dragging'
-                ? 'border-sage-light bg-sage/[0.04] scale-[1.005]'
-                : 'border-sage/40 bg-white/[0.02] hover:border-sage hover:bg-sage/[0.04]'
+                ? 'border-sage-light bg-sage/4 scale-[1.005]'
+                : 'border-sage/40 bg-white/2 hover:border-sage hover:bg-sage/4'
             }`}
         >
-          <div className="w-14 h-14 rounded-full bg-sage/[0.12] border border-sage/25 flex items-center justify-center text-2xl transition-transform group-hover:-translate-y-1">
+          <div className="w-14 h-14 rounded-full bg-sage/12 border border-sage/25 flex items-center justify-center text-2xl transition-transform group-hover:-translate-y-1">
             🌿
           </div>
           <div className="text-center">
-            <strong className="block font-playfair text-[1.1rem] font-normal text-parchment-dark mb-1">
+            <strong className="block font-playfair text-[1.1rem] font-normal text-sage mb-1">
               Drop your leaf image here
             </strong>
-            <span className="font-mono text-[0.72rem] tracking-[0.08em] text-parchment/40">
+            <span className="font-mono text-[0.72rem] tracking-[0.08em] text-sage-light">
               JPG, PNG, WEBP — max 10MB
             </span>
           </div>
@@ -132,7 +132,7 @@ export default function ImageUploader() {
               e.stopPropagation();
               fileInputRef.current?.click();
             }}
-            className="font-mono text-[0.72rem] text-sage-light bg-sage/[0.12] border border-sage/30 px-5 py-2 rounded-md tracking-[0.08em] uppercase hover:bg-sage/20 transition-colors"
+            className="font-mono text-[0.72rem] text-sage-light bg-sage/12 border border-sage/30 px-5 py-2 rounded-md tracking-[0.08em] uppercase hover:bg-sage/20 transition-colors cursor-pointer"
           >
             Browse files
           </button>
