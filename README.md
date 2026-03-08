@@ -1,6 +1,4 @@
-# Bloom 🌱
-AI-powered crop disease detection and monitoring platform for farmers.  
-
+# Bloom 🌱 - Hack Canada 2026
 Bloom allows users to upload an image of a plant leaf, detect potential crop diseases using a machine learning model, generate treatment and prevention recommendations using Gemini AI, and store diagnosis reports in a PostgreSQL database to track disease trends.  
 
 The long-term goal is to help farmers detect crop diseases early while building a dataset that can help identify regional outbreaks.  
