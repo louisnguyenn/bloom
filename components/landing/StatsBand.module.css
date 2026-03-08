@@ -1,0 +1,54 @@
+.band {
+  background: var(--ink);
+  padding: 3rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+  text-align: center;
+  padding: 0 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--parchment);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.number span {
+  color: var(--sage-light);
+}
+
+.label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 234, 216, 0.4);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .band {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+  .stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem 0;
+  }
+  .stat:last-child {
+    border-bottom: none;
+  }
+}
