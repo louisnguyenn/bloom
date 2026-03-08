@@ -1,20 +1,20 @@
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import CtaSection from '@/components/landing/CtaSection';
+import Features from '@/components/landing/Features';
 import Hero from '@/components/landing/Hero';
-// import StatsBand from '@/components/landing/StatsBand';
-// import HowItWorks from '@/components/landing/HowItWorks';
-// import Features from '@/components/landing/Features';
-// import CtaSection from '@/components/landing/CtaSection';
+import HowItWorks from '@/components/landing/HowItWorks';
+import StatsBand from '@/components/landing/StatsBand';
+import Footer from '@/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar';
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      {/* <StatsBand />
+      <StatsBand />
       <HowItWorks />
       <Features />
-      <CtaSection /> */}
+      <CtaSection />
       <Footer />
     </>
   );
