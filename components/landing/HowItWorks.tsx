@@ -27,7 +27,9 @@ export default function HowItWorks() {
       <div className={styles.header}>
         <div className={styles.kicker}>Process</div>
         <h2 className={styles.title}>
-          Three steps to<br /><em>early detection</em>
+          Three steps to
+          <br />
+          <em>early detection</em>
         </h2>
       </div>
       <div className={styles.steps}>
