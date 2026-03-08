@@ -91,7 +91,7 @@ export default function ImageUploader() {
     conf >= 0.8 ? '#4ade80' : conf >= 0.5 ? '#facc15' : '#f87171';
 
   return (
-    <main className="flex flex-col items-center pt-32 pb-16 px-8 gap-8 max-w-[720px] mx-auto w-full min-h-screen">
+    <main className="flex flex-col items-center pt-32 pb-16 px-8 gap-8 max-w-180 mx-auto w-full min-h-screen">
       {/* Headline */}
       <div className="text-center">
         <h1 className="font-playfair text-fluid-h1 font-light leading-tight tracking-tighter text-ink">
@@ -153,9 +153,9 @@ export default function ImageUploader() {
             <Image
               src={imagePreview}
               alt="Leaf preview"
-              className="w-full max-h-[360px] object-cover block"
+              className="w-full max-h-90 object-cover block"
             />
-            <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-ink/70 to-transparent flex justify-between items-start">
+            <div className="absolute top-0 left-0 right-0 p-4 bg-linear-to-b from-ink/70 to-transparent flex justify-between items-start">
               <span className="font-mono text-[0.65rem] tracking-widest uppercase bg-sage/20 border border-sage/30 px-2.5 py-1 rounded text-sage-light">
                 Ready to analyze
               </span>
@@ -184,7 +184,7 @@ export default function ImageUploader() {
 
       {/* LOADING */}
       {state === 'loading' && (
-        <div className="w-full min-h-[200px] flex flex-col items-center justify-center gap-6 border border-sage/20 rounded-xl bg-white/[0.015]">
+        <div className="w-full min-h-50 flex flex-col items-center justify-center gap-6 border border-sage/20 rounded-xl bg-white/1.5">
           <div className="w-12 h-12 border-2 border-sage/15 border-t-sage rounded-full animate-spin-slow" />
           <div className="font-mono text-[0.72rem] tracking-[0.12em] uppercase text-parchment/50">
             Analyzing leaf
@@ -200,7 +200,7 @@ export default function ImageUploader() {
       {/* RESULT */}
       {state === 'result' && result && (
         <div className="w-full border border-sage/25 rounded-xl overflow-hidden animate-slide-up">
-          <div className="px-6 py-5 bg-sage/[0.08] border-b border-sage/15 flex items-start justify-between gap-4">
+          <div className="px-6 py-5 bg-sage/8 border-b border-sage/15 flex items-start justify-between gap-4">
             <div>
               <div className="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-sage-light/70 mb-1.5">
                 Detected Disease
@@ -258,7 +258,7 @@ export default function ImageUploader() {
 
       {/* ERROR */}
       {state === 'error' && (
-        <div className="w-full p-8 border border-rust/35 rounded-xl bg-rust/[0.08] text-center">
+        <div className="w-full p-8 border border-rust/35 rounded-xl bg-rust/8 text-center">
           <p className="font-mono text-[0.8rem] text-red-400 mb-4">
             {errorMsg}
           </p>
