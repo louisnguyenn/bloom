@@ -12,13 +12,13 @@ export default function Navbar() {
       </Link>
       <div className="flex items-center gap-10">
         <Link
-          href="#how-it-works"
+          href="/#how-it-works"
           className="font-mono text-[0.7rem] tracking-widest uppercase text-muted hover:text-ink transition-colors no-underline"
         >
           How it works
         </Link>
         <Link
-          href="#features"
+          href="/#features"
           className="font-mono text-[0.7rem] tracking-widest uppercase text-muted hover:text-ink transition-colors no-underline"
         >
           Features
