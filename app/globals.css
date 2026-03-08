@@ -1,38 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
+
 @import 'tailwindcss';
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --ink: #1c1510;
-  --ink-light: #3d3028;
-  --rust: #8b3a1a;
-  --rust-light: #b85c32;
-  --sage: #4a6741;
-  --sage-light: #6b9163;
-  --parchment: #f2ead8;
-  --parchment-dark: #e8dcc0;
-  --cream: #faf6ec;
-  --gold: #c4932a;
-  --muted: #8a7d6b;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'Spectral', serif;
-  overflow-x: hidden;
-}
 
 body::before {
   content: '';
@@ -43,4 +11,102 @@ body::before {
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
+}
+
+/* Fluid font sizes */
+.text-fluid-hero {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+}
+.text-fluid-h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+.text-fluid-h2 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+}
+.text-fluid-cta {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+}
+
+/* Scan line animation */
+@keyframes scanDown {
+  0% {
+    top: 15%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 85%;
+    opacity: 0;
+  }
+}
+.animate-scan {
+  animation: scanDown 3s ease-in-out infinite;
+}
+
+/* Kicker line — ::before with content */
+.kicker-line::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: #4a6741;
+  display: block;
+}
+.kicker-section::before {
+  content: '§';
+  color: #8b3a1a;
+  font-size: 0.8rem;
+  margin-right: 0.4rem;
+}
+
+/* CTA watermark */
+.cta-watermark::before {
+  content: 'BLOOM';
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 18vw;
+  font-weight: 900;
+  color: rgba(28, 21, 16, 0.03);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+
+/* Hero right radial gradients */
+.hero-right-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 30% 20%,
+      rgba(107, 145, 99, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 70% 80%,
+      rgba(139, 58, 26, 0.08) 0%,
+      transparent 50%
+    );
+}
+
+/* Vertical writing mode */
+.writing-vertical {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+/* Confidence bar */
+.conf-fill {
+  height: 100%;
+  background: #4a6741;
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
