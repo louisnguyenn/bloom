@@ -31,7 +31,7 @@ export default function Hero() {
         <h1 className="font-playfair text-fluid-hero font-black leading-none tracking-tighter text-ink mb-2">
           Detect
           <br />
-          <em className="not-italic italic text-rust">disease.</em>
+          <em className="italic text-rust">disease.</em>
           <br />
           Save your
         </h1>
@@ -43,9 +43,9 @@ export default function Hero() {
           </span>
         </div>
 
-        <p className="font-spectral text-[1.05rem] font-light leading-relaxed text-ink-light max-w-[420px] mb-10">
+        <p className="font-spectral text-[1.05rem] font-light leading-relaxed text-ink-light max-w-105 mb-10">
           Photograph a leaf. Get an instant AI diagnosis with treatment
-          guidance. Built for farmers who can&spos;t wait for an agronomist.
+          guidance. Built for farmers who can&apos;t wait for an agronomist.
         </p>
 
         <div className="flex items-center gap-5">
@@ -71,10 +71,10 @@ export default function Hero() {
         </div>
 
         {/* Scan line */}
-        <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-sage/50 to-transparent z-10 animate-scan" />
+        <div className="absolute left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-sage/50 to-transparent z-10 animate-scan" />
 
         <svg
-          className="w-[85%] max-w-[440px] relative z-[2]"
+          className="w-[85%] max-w-110 relative z-2"
           viewBox="0 0 400 480"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -290,7 +290,7 @@ export default function Hero() {
         </svg>
 
         {/* Detection badge */}
-        <div className="absolute bottom-10 right-10 bg-cream/90 border border-sage/25 rounded-lg px-5 py-4 z-[4] backdrop-blur-sm animate-badge-pop">
+        <div className="absolute bottom-10 right-10 bg-cream/90 border border-sage/25 rounded-lg px-5 py-4 z-4 backdrop-blur-sm animate-badge-pop">
           <div className="font-mono text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-1">
             AI Diagnosis
           </div>
