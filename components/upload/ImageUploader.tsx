@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useRef, useState } from 'react';
 
@@ -149,7 +150,7 @@ export default function ImageUploader() {
       {state === 'preview' && imagePreview && (
         <div className="w-full rounded-xl overflow-hidden border border-sage/25 bg-ink-light">
           <div className="relative">
-            <img
+            <Image
               src={imagePreview}
               alt="Leaf preview"
               className="w-full max-h-[360px] object-cover block"
