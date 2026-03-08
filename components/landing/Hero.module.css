@@ -1,0 +1,297 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── LEFT ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 3rem 5rem 4rem;
+  position: relative;
+  z-index: 2;
+  animation: heroFadeUp 0.8s ease both;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kicker::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--sage);
+  display: block;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--rust);
+}
+
+.ticker {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sage);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 1.75rem;
+  height: 1.1em;
+  overflow: hidden;
+  position: relative;
+}
+
+.tickerWord {
+  display: block;
+  animation: tickerSlide 0.4s ease;
+}
+
+@keyframes tickerSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-light);
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btnPrimary {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--sage);
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnPrimary:hover {
+  background: var(--sage-light);
+  transform: translateY(-1px);
+}
+
+.btnGhost {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.btnGhost:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ── RIGHT ── */
+.right {
+  position: relative;
+  background: var(--parchment);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heroFadeIn 1s ease 0.3s both;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 30% 20%,
+      rgba(107, 145, 99, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 70% 80%,
+      rgba(139, 58, 26, 0.08) 0%,
+      transparent 50%
+    );
+}
+
+.botanicalSvg {
+  width: 85%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+}
+
+.scanLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(74, 103, 65, 0.5),
+    transparent
+  );
+  animation: scanDown 3s ease-in-out infinite;
+  z-index: 3;
+  top: 20%;
+}
+
+@keyframes scanDown {
+  0% {
+    top: 15%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 85%;
+    opacity: 0;
+  }
+}
+
+.badge {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background: rgba(250, 246, 236, 0.92);
+  border: 1px solid rgba(74, 103, 65, 0.25);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  z-index: 4;
+  backdrop-filter: blur(8px);
+  animation: badgePop 0.5s ease 1.2s both;
+}
+
+@keyframes badgePop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.badgeLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.badgeDisease {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.badgeConf {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--sage);
+  margin-top: 0.2rem;
+}
+
+.cornerLabel {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(28, 21, 16, 0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .right {
+    min-height: 50vw;
+  }
+  .left {
+    padding: 3rem 2rem;
+  }
+}
