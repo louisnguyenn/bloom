@@ -1,0 +1,120 @@
+.wrapper {
+  background: var(--parchment);
+  border-top: 1px solid rgba(28, 21, 16, 0.08);
+}
+
+.section {
+  padding: 7rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.kicker::before {
+  content: '§';
+  color: var(--rust);
+  font-size: 0.8rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--rust);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(28, 21, 16, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card {
+  background: var(--cream);
+  padding: 2.5rem;
+  transition: background 0.25s;
+}
+
+.card:hover {
+  background: var(--parchment-dark);
+}
+
+.iconRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(28, 21, 16, 0.12);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background: var(--parchment-dark);
+}
+
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(28, 21, 16, 0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
