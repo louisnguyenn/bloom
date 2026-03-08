@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './Hero.module.css';
 
 const DISEASES = [
   'Late Blight',
@@ -22,43 +21,60 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero}>
-      {/* Left: copy */}
-      <div className={styles.left}>
-        <div className={styles.kicker}>AI-powered crop diagnostics</div>
-        <h1 className={styles.title}>
+    <section className="min-h-screen grid grid-cols-2 pt-20 overflow-hidden max-md:grid-cols-1 max-md:min-h-fit">
+      {/* Left */}
+      <div className="flex flex-col justify-center px-16 py-20 relative z-10 animate-hero-up max-md:px-8 max-md:py-12">
+        <div className="font-mono text-[0.65rem] tracking-[0.18em] uppercase text-sage mb-6 flex items-center gap-3 kicker-line">
+          AI-powered crop diagnostics
+        </div>
+
+        <h1 className="font-playfair text-fluid-hero font-black leading-none tracking-tighter text-ink mb-2">
           Detect
           <br />
-          <em>disease.</em>
+          <em className="not-italic italic text-rust">disease.</em>
           <br />
           Save your
         </h1>
-        <div className={styles.ticker}>
-          <span className={styles.tickerWord} key={diseaseIndex}>
+
+        {/* Ticker */}
+        <div className="font-playfair text-fluid-hero font-normal italic text-sage tracking-tighter leading-none mb-7 h-[1.1em] overflow-hidden">
+          <span className="block animate-ticker" key={diseaseIndex}>
             harvest.
           </span>
         </div>
-        <p className={styles.sub}>
+
+        <p className="font-spectral text-[1.05rem] font-light leading-relaxed text-ink-light max-w-[420px] mb-10">
           Photograph a leaf. Get an instant AI diagnosis with treatment
-          guidance. Built for farmers who can&apos;t wait for an agronomist.
+          guidance. Built for farmers who can&spos;t wait for an agronomist.
         </p>
-        <div className={styles.actions}>
-          <a href="/upload" className={styles.btnPrimary}>
+
+        <div className="flex items-center gap-5">
+          <a
+            href="/upload"
+            className="font-mono text-[0.75rem] tracking-[0.08em] uppercase bg-sage text-white px-8 py-3.5 rounded no-underline hover:bg-sage-light hover:-translate-y-px transition-all inline-flex items-center gap-2"
+          >
             Diagnose a crop →
           </a>
-          <a href="#how-it-works" className={styles.btnGhost}>
+          <a
+            href="#how-it-works"
+            className="font-spectral italic text-[0.95rem] text-muted no-underline border-b border-transparent hover:text-ink hover:border-ink transition-all"
+          >
             See how it works
           </a>
         </div>
       </div>
 
-      {/* Right: botanical illustration */}
-      <div className={styles.right}>
-        <div className={styles.cornerLabel}>Specimen analysis</div>
-        <div className={styles.scanLine} />
+      {/* Right — botanical panel */}
+      <div className="relative bg-parchment overflow-hidden flex items-center justify-center animate-hero-in hero-right-gradient max-md:min-h-[50vw]">
+        <div className="writing-vertical absolute top-6 left-6 font-mono text-[0.6rem] text-ink/25 tracking-widest uppercase">
+          Specimen analysis
+        </div>
+
+        {/* Scan line */}
+        <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-sage/50 to-transparent z-10 animate-scan" />
 
         <svg
-          className={styles.botanicalSvg}
+          className="w-[85%] max-w-[440px] relative z-[2]"
           viewBox="0 0 400 480"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -273,10 +289,17 @@ export default function Hero() {
           </text>
         </svg>
 
-        <div className={styles.badge}>
-          <div className={styles.badgeLabel}>AI Diagnosis</div>
-          <div className={styles.badgeDisease}>Late Blight</div>
-          <div className={styles.badgeConf}>87% confidence</div>
+        {/* Detection badge */}
+        <div className="absolute bottom-10 right-10 bg-cream/90 border border-sage/25 rounded-lg px-5 py-4 z-[4] backdrop-blur-sm animate-badge-pop">
+          <div className="font-mono text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-1">
+            AI Diagnosis
+          </div>
+          <div className="font-playfair text-base font-bold text-ink">
+            Late Blight
+          </div>
+          <div className="font-mono text-[0.7rem] text-sage mt-0.5">
+            87% confidence
+          </div>
         </div>
       </div>
     </section>
