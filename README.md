@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bloom 🌱
+AI-powered crop disease detection and monitoring platform for farmers.  
 
-## Getting Started
+Bloom allows users to upload an image of a plant leaf, detect potential crop diseases using a machine learning model, generate treatment and prevention recommendations using Gemini AI, and store diagnosis reports in a PostgreSQL database to track disease trends.  
 
-First, run the development server:
+The long-term goal is to help farmers detect crop diseases early while building a dataset that can help identify regional outbreaks.  
 
+## Problem
+Crop diseases significantly impact agricultural productivity. Early detection is often difficult without expert knowledge, and farmers may not have immediate access to agronomists.  
+
+Bloom helps address this by providing:
+- AI-based plant disease detection
+- Automated treatment recommendations
+- Crowdsourced disease monitoring
+
+## Core Features
+### Image-Based Disease Detection
+Users upload an image of a crop leaf. A machine learning model analyzes the image and predicts the most likely disease.
+
+### AI Treatment Recommendations
+Once a disease is detected, Gemini AI generates treatment and prevention guidance tailored to the crop.
+
+### Diagnosis Logging
+Each diagnosis is stored in PostgreSQL, allowing the system to track disease occurrences.
+
+### Disease Analytics
+Stored diagnoses can later be used to analyze trends and detect potential outbreaks.
+
+## Tech Stack
+### Frontend
+Next.js (App Router)  
+React  
+Tailwind CSS  
+
+### Backend
+Next.js API Routes (Route Handlers)
+
+### AI / ML
+Plant disease detection model (external ML service or API)  
+Google Gemini API for treatment recommendations  
+
+### Database
+PostgreSQL
+
+## Setup (Development)
+### Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Set environment variables:
+```.env.local
+DATABASE_URL=
+GEMINI_API_KEY=
+ML_SERVICE_URL=
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Authors
+- Louis Nguyen
