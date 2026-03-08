@@ -2,6 +2,83 @@
 
 @import 'tailwindcss';
 
+@theme {
+  /* Colors */
+  --color-ink: #1c1510;
+  --color-ink-light: #3d3028;
+  --color-rust: #8b3a1a;
+  --color-rust-light: #b85c32;
+  --color-sage: #4a6741;
+  --color-sage-light: #6b9163;
+  --color-parchment: #f2ead8;
+  --color-parchment-dark: #e8dcc0;
+  --color-cream: #faf6ec;
+  --color-muted: #8a7d6b;
+
+  /* Fonts */
+  --font-playfair: 'Playfair Display', serif;
+  --font-spectral: Spectral, serif;
+  --font-mono: 'DM Mono', monospace;
+
+  /* Animations */
+  --animate-hero-up: heroFadeUp 0.8s ease both;
+  --animate-hero-in: heroFadeIn 1s ease 0.3s both;
+  --animate-badge-pop: badgePop 0.5s ease 1.2s both;
+  --animate-ticker: tickerSlide 0.4s ease;
+  --animate-slide-up: slideUp 0.4s ease;
+  --animate-spin-slow: spin 0.9s linear infinite;
+
+  /* Keyframes */
+  --keyframes-heroFadeUp: {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  };
+  --keyframes-heroFadeIn: {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  };
+  --keyframes-badgePop: {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  };
+  --keyframes-tickerSlide: {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  };
+  --keyframes-slideUp: {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  };
+}
+
 body::before {
   content: '';
   position: fixed;
