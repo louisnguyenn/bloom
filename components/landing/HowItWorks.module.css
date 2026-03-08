@@ -1,0 +1,113 @@
+.section {
+  padding: 7rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.kicker::before {
+  content: '§';
+  color: var(--rust);
+  font-size: 0.8rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--rust);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(28, 21, 16, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.step {
+  padding: 2.5rem;
+  border-right: 1px solid rgba(28, 21, 16, 0.08);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.step:last-child {
+  border-right: none;
+}
+
+.step:hover {
+  background: var(--parchment);
+}
+
+.stepNumber {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(28, 21, 16, 0.06);
+  line-height: 1;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.stepIcon {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.stepTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.stepDesc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step {
+    border-right: none;
+    border-bottom: 1px solid rgba(28, 21, 16, 0.08);
+  }
+  .step:last-child {
+    border-bottom: none;
+  }
+}
