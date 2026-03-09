@@ -37,9 +37,6 @@ Next.js API Routes (Route Handlers)
 Plant disease detection model (external ML service or API)  
 Google Gemini API for treatment recommendations  
 
-### Database
-PostgreSQL
-
 ## Setup (Development)
 ### Install dependencies:
 ```bash
