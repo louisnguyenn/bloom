@@ -19,8 +19,8 @@ Affected crop: ${cropType}
 
 Respond in JSON only with this exact structure, no markdown, no explanation:
 {
-  "treatment": "2-3 sentences of specific, actionable treatment steps the farmer should take immediately",
-  "prevention": "2-3 sentences of prevention measures to stop this disease from recurring or spreading",
+  "treatment": "1-2 concise sentences of actionable treatment steps",
+  "prevention": "1-2 concise sentences of prevention measures",
   "severity": "low or medium or high"
 }`;
 
@@ -33,7 +33,7 @@ Respond in JSON only with this exact structure, no markdown, no explanation:
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: {
           temperature: 0.3,
-          maxOutputTokens: 512,
+          maxOutputTokens: 1024,
           responseMimeType: 'application/json',
         },
       }),
