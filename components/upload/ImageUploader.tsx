@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useCallback, useRef, useState } from 'react';
 
 type DiagnosisResult = {
@@ -112,7 +111,7 @@ export default function ImageUploader() {
           className={`w-full min-h-80 border-[1.5px] border-dashed rounded-xl flex flex-col items-center justify-center gap-4 cursor-pointer transition-all relative overflow-hidden
             ${
               state === 'dragging'
-                ? 'border-sage-light bg-sage/4 scale-[1.005]'
+                ? 'border-sage-light bg-sage/4] scale-[1.005]'
                 : 'border-sage/40 bg-white/2 hover:border-sage hover:bg-sage/4'
             }`}
         >
@@ -120,10 +119,10 @@ export default function ImageUploader() {
             🌿
           </div>
           <div className="text-center">
-            <strong className="block font-playfair text-[1.1rem] font-normal text-sage mb-1">
+            <strong className="block font-playfair text-[1.1rem] font-normal text-parchment-dark mb-1">
               Drop your leaf image here
             </strong>
-            <span className="font-mono text-[0.72rem] tracking-[0.08em] text-sage-light">
+            <span className="font-mono text-[0.72rem] tracking-[0.08em] text-parchment/40">
               JPG, PNG, WEBP — max 10MB
             </span>
           </div>
@@ -132,7 +131,7 @@ export default function ImageUploader() {
               e.stopPropagation();
               fileInputRef.current?.click();
             }}
-            className="font-mono text-[0.72rem] text-sage-light bg-sage/12 border border-sage/30 px-5 py-2 rounded-md tracking-[0.08em] uppercase hover:bg-sage/20 transition-colors cursor-pointer"
+            className="font-mono text-[0.72rem] text-sage-light bg-sage/12 border border-sage/30 px-5 py-2 rounded-md tracking-[0.08em] uppercase hover:bg-sage/20 transition-colors"
           >
             Browse files
           </button>
@@ -246,12 +245,6 @@ export default function ImageUploader() {
             >
               ＋ New diagnosis
             </button>
-            <Link
-              href="/dashboard"
-              className="font-mono text-[0.68rem] tracking-[0.08em] uppercase border border-parchment/15 text-parchment/50 px-4 py-2 rounded-md hover:border-parchment/30 hover:text-parchment/80 transition-colors no-underline"
-            >
-              View history →
-            </Link>
           </div>
         </div>
       )}
