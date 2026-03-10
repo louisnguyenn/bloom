@@ -185,13 +185,8 @@ export default function ImageUploader() {
       {state === 'loading' && (
         <div className="w-full min-h-50 flex flex-col items-center justify-center gap-6 border border-sage/20 rounded-xl bg-white/1.5">
           <div className="w-12 h-12 border-2 border-sage/15 border-t-sage rounded-full animate-spin-slow" />
-          <div className="font-mono text-[0.72rem] tracking-[0.12em] uppercase text-parchment/50">
+          <div className="font-mono text-[0.72rem] tracking-[0.12em] uppercase text-sage-light">
             Analyzing leaf
-          </div>
-          <div className="flex flex-col gap-1.5 font-mono text-[0.65rem] text-parchment/30 tracking-[0.05em] text-center">
-            <span>→ Running disease detection model</span>
-            <span>→ Generating treatment plan with Gemini</span>
-            <span>→ Logging diagnosis</span>
           </div>
         </div>
       )}
