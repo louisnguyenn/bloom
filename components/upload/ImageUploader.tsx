@@ -149,7 +149,7 @@ export default function ImageUploader() {
       {state === 'preview' && imagePreview && (
         <div className="w-full rounded-xl overflow-hidden border border-sage/25 bg-ink-light">
           <div className="relative">
-            <Image
+            <img
               src={imagePreview}
               alt="Leaf preview"
               className="w-full max-h-90 object-cover block"
