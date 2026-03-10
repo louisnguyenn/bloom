@@ -21,11 +21,11 @@ Respond in JSON only with this exact structure, no markdown, no explanation:
 {
   "treatment": "2-3 sentences of specific, actionable treatment steps the farmer should take immediately",
   "prevention": "2-3 sentences of prevention measures to stop this disease from recurring or spreading",
-  "severity": "low | medium | high"
+  "severity": "low or medium or high"
 }`;
 
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -34,6 +34,7 @@ Respond in JSON only with this exact structure, no markdown, no explanation:
         generationConfig: {
           temperature: 0.3,
           maxOutputTokens: 512,
+          responseMimeType: 'application/json',
         },
       }),
     }
@@ -47,7 +48,9 @@ Respond in JSON only with this exact structure, no markdown, no explanation:
   const data = await response.json();
   const raw = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
 
-  // Strip markdown code fences if Gemini wraps in ```json
+  console.log('Gemini raw response:', raw);
+
+  // Strip markdown code fences just in case
   const cleaned = raw.replace(/```json|```/g, '').trim();
 
   try {
@@ -61,7 +64,16 @@ Respond in JSON only with this exact structure, no markdown, no explanation:
         'Ensure good air circulation and avoid overhead watering.',
       severity: parsed.severity ?? 'medium',
     };
-  } catch {
-    throw new Error('Failed to parse Gemini response as JSON');
+  } catch (e) {
+    console.error('JSON parse failed. Raw was:', raw);
+    console.error(e);
+    // Rather than crashing, return fallback advice so the user still gets a result
+    return {
+      treatment:
+        'Consult a local agronomist for treatment options specific to your region and crop variety.',
+      prevention:
+        'Practice crop rotation, ensure proper drainage, and monitor plants regularly for early signs of disease.',
+      severity: 'medium',
+    };
   }
 }
