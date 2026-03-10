@@ -21,9 +21,6 @@ export async function detectDisease(
       },
       body: JSON.stringify({
         images: [imageBase64],
-        // Return top disease match with details
-        details: ['common_names', 'description', 'treatment'],
-        language: 'en',
       }),
     }
   );
@@ -35,7 +32,8 @@ export async function detectDisease(
 
   const data = await response.json();
 
-  // Pull the top suggestion from the response
+  console.log('crop.health raw response:', JSON.stringify(data, null, 2));
+
   const topSuggestion = data.result?.disease?.suggestions?.[0];
 
   if (!topSuggestion) {
