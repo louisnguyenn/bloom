@@ -33,9 +33,9 @@ Tailwind CSS
 ### Backend
 Next.js API Routes (Route Handlers)
 
-### AI / ML
-Plant disease detection model (external ML service or API)  
-Google Gemini API for treatment recommendations  
+### APIs
+Plant disease detection model (crop.health)  
+Google Gemini API  
 
 ## Setup (Development)
 ### Install dependencies:
@@ -45,9 +45,8 @@ npm install
 
 ### Set environment variables:
 ```.env.local
-DATABASE_URL=
 GEMINI_API_KEY=
-ML_SERVICE_URL=
+CROP_HEALTH_API_KEY=
 ```
 
 ### Run development server:
