@@ -119,10 +119,10 @@ export default function ImageUploader() {
             🌿
           </div>
           <div className="text-center">
-            <strong className="block font-playfair text-[1.1rem] font-normal text-parchment-dark mb-1">
+            <strong className="block font-playfair text-[1.1rem] font-normal text-sage-light mb-1">
               Drop your leaf image here
             </strong>
-            <span className="font-mono text-[0.72rem] tracking-[0.08em] text-parchment/40">
+            <span className="font-mono text-[0.72rem] tracking-[0.08em] text-sage-light">
               JPG, PNG, WEBP — max 10MB
             </span>
           </div>
@@ -131,7 +131,7 @@ export default function ImageUploader() {
               e.stopPropagation();
               fileInputRef.current?.click();
             }}
-            className="font-mono text-[0.72rem] text-sage-light bg-sage/12 border border-sage/30 px-5 py-2 rounded-md tracking-[0.08em] uppercase hover:bg-sage/20 transition-colors"
+            className="font-mono text-[0.72rem] text-sage-light bg-sage/12 border border-sage/30 px-5 py-2 rounded-md tracking-[0.08em] uppercase hover:bg-sage/20 transition-colors cursor-pointer"
           >
             Browse files
           </button>
@@ -155,12 +155,12 @@ export default function ImageUploader() {
               className="w-full max-h-90 object-cover block"
             />
             <div className="absolute top-0 left-0 right-0 p-4 bg-linear-to-b from-ink/70 to-transparent flex justify-between items-start">
-              <span className="font-mono text-[0.65rem] tracking-widest uppercase bg-sage/20 border border-sage/30 px-2.5 py-1 rounded text-sage-light">
+              <span className="font-mono text-[0.65rem] tracking-widest uppercase bg-sage/20 border border-sage-light px-2.5 py-1 rounded text-green-500">
                 Ready to analyze
               </span>
               <button
                 onClick={reset}
-                className="w-7 h-7 rounded-full bg-ink/60 border border-parchment/20 text-parchment flex items-center justify-center text-sm hover:bg-rust/30 hover:border-rust transition-all"
+                className="w-7 h-7 rounded-full bg-ink/60 border border-parchment/20 text-parchment flex items-center justify-center text-sm hover:bg-rust/30 hover:border-rust transition-all cursor-pointer"
               >
                 ✕
               </button>
@@ -173,7 +173,7 @@ export default function ImageUploader() {
             </span>
             <button
               onClick={analyze}
-              className="font-mono text-[0.8rem] tracking-[0.08em] uppercase bg-sage text-cream px-8 py-3 rounded-lg hover:bg-sage-light hover:-translate-y-px transition-all"
+              className="font-mono text-[0.8rem] tracking-[0.08em] uppercase bg-sage text-cream px-8 py-3 rounded-lg hover:bg-sage-light hover:-translate-y-px transition-all cursor-pointer"
             >
               Analyze →
             </button>
@@ -204,12 +204,12 @@ export default function ImageUploader() {
               <div className="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-sage-light/70 mb-1.5">
                 Detected Disease
               </div>
-              <div className="font-playfair text-[1.6rem] font-normal text-cream tracking-tight leading-tight">
+              <div className="font-playfair text-[1.6rem] font-normal text-sage-light tracking-tight leading-tight">
                 {result.disease}
               </div>
             </div>
             <div className="flex flex-col items-end gap-1 shrink-0">
-              <span className="font-mono text-[0.6rem] tracking-[0.12em] uppercase text-parchment/40">
+              <span className="font-mono text-[0.6rem] tracking-[0.12em] uppercase text-sage-light">
                 Confidence
               </span>
               <span
@@ -225,7 +225,7 @@ export default function ImageUploader() {
               <div className="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-sage-light/70 mb-2">
                 Treatment
               </div>
-              <p className="font-spectral text-[0.78rem] leading-relaxed text-cream/75 font-light">
+              <p className="font-spectral text-[0.78rem] leading-relaxed text-sage-light font-light">
                 {result.treatment}
               </p>
             </div>
@@ -233,7 +233,7 @@ export default function ImageUploader() {
               <div className="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-sage-light/70 mb-2">
                 Prevention
               </div>
-              <p className="font-spectral text-[0.78rem] leading-relaxed text-cream/75 font-light">
+              <p className="font-spectral text-[0.78rem] leading-relaxed text-sage-light font-light">
                 {result.prevention}
               </p>
             </div>
@@ -241,7 +241,7 @@ export default function ImageUploader() {
           <div className="px-6 py-4 border-t border-sage/10 flex gap-3 bg-black/15">
             <button
               onClick={reset}
-              className="font-mono text-[0.68rem] tracking-[0.08em] uppercase bg-sage/20 border border-sage/35 text-sage-light px-4 py-2 rounded-md hover:bg-sage/30 transition-colors"
+              className="font-mono text-[0.68rem] tracking-[0.08em] uppercase bg-sage/20 border border-sage/35 text-sage-light px-4 py-2 rounded-md hover:bg-sage/30 transition-colors cursor-pointer"
             >
               ＋ New diagnosis
             </button>
