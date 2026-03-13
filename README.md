@@ -18,12 +18,6 @@ Users upload an image of a crop leaf. A machine learning model analyzes the imag
 ### AI Treatment Recommendations
 Once a disease is detected, Gemini AI generates treatment and prevention guidance tailored to the crop.
 
-### Diagnosis Logging
-Each diagnosis is stored in PostgreSQL, allowing the system to track disease occurrences.
-
-### Disease Analytics
-Stored diagnoses can later be used to analyze trends and detect potential outbreaks.
-
 ## Tech Stack
 ### Frontend
 Next.js (App Router)  
